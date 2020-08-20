@@ -1,0 +1,66 @@
+# Input parameters: low velocity model (0-800)(0-400)
+#—————————————————
+
+subsection Medium
+  # write medium ids separated by a “;” (ids are from gmsh)
+  set material id = 6;7;8;9
+
+  # write velocities corresponding to the material ids declared above separated by a “;
+  set velocities = 900;3500;1500;2500
+end
+
+subsection Source
+  # central frequency of source (Ricker wave)
+  set frequency = 40
+
+  # spatial extent of source
+  set source radius = 3.125
+
+  # x position of source
+  set source_pos_x = 400
+
+  # y position of source
+  set source_pos_y = -50
+end
+
+subsection Receivers
+  # number of receivers
+  set n_receivers = 100
+
+  # y position of receivers
+  set y_pos = -10
+  
+  # x position of first receiver
+  set x_init = 50
+
+  # x position of last receiver
+  set x_end = 750
+end
+
+subsection Discretization
+  # name of mesh file, include .msh extension
+set mesh file = scat_neg_mr4.msh
+ 
+# refinement around source
+set source refinement = 1
+
+  # total time of simulationa(reference:0.12)
+  set simulation_total_time = 0.65
+
+  # simulation time_step (reference 0.0001)
+set time_step = 0.000025
+
+# time discretization type: 0 (explicit Euler), 0 (implicit Euler) 0.5 (Crank-Nicolson)
+  set theta = 0.5
+end
+
+subsection Finite Element
+  # Number of quadrature points
+  set n_quadrature = 4
+
+  #degree of finite element
+  set fe_degree = 1
+
+  # number of directions for the plane waves (enrichment functions)
+set q_directions = 7
+end
