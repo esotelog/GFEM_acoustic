@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sotelo"
+  given-names: "Edith"
+- family-names: "Favino"
+  given-names: "Marco"
+title: "GFEM acoustics"
+date-released: 2017-12-18
+url: "https://github.com/esotelog/GFEM_acoustic.git"
